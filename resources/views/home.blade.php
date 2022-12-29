@@ -15,6 +15,14 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+
+                    <form enctype="multipart/form-data" method="POST" action="{{ Route('import') }}">
+                        @csrf
+                        <input type="file" name="file">
+
+                        <button>Import</button>
+                    </form>
                 </div>
             </div>
         </div>
