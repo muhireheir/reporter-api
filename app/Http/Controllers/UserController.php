@@ -20,7 +20,7 @@ class UserController extends Controller
     }
 
     public function students(Request $request){
-        $users = User::where('role', "STUDENT")->get();
+        $users = User::with('student')->where('role', "STUDENT")->get();
         return response()->json($users,Response::HTTP_OK);
     }
 
