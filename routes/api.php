@@ -32,6 +32,8 @@ Route::any('/re-charge-init','StudentController@initTransaction');
 
 Route::middleware(['cors'])->group(function(){
     Route::post('/login','UserController@login');
+    Route::get('/students','UserController@students');
+    Route::get('/profile/{id}','UserController@profile');
     Route::post('/add_student_card','StudentController@addCard');
     Route::post('/charge','StudentController@charge');
 
